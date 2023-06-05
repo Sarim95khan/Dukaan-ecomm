@@ -35,16 +35,18 @@ export default async function Home() {
   const getData: IIProduct[] = await getSanityData();
 
   return (
-    <main className="h-screen">
-      <div className="my-10 px-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 justify-center gap-10 card ">
-        {getData.map((item) => {
-          return (
-            <div key={item._id}>
-              <Card item={item} />
-            </div>
-          );
-        })}
-      </div>
+    <main className="">
+      <section id="Products">
+        <div className="my-10 px-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 justify-center gap-10 card  ">
+          {getData.map((item) => {
+            return (
+              <div key={item._id}>
+                <Card item={item} />
+              </div>
+            );
+          })}
+        </div>
+      </section>
     </main>
   );
 }
