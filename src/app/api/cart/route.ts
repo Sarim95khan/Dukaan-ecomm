@@ -10,17 +10,26 @@ export async function GET(request: NextRequest) {
 }
 
 export async function POST(request: NextRequest) {
-  const user_id = uuid();
-  const setCookies = cookies();
-
   const req = await request.json();
+  const uid = uuid();
+
+  const setCookies = cookies();
+  const user_id = cookies().get('user_id');
+
+  if (!user_id) {
+    setCookies.set('user_id', uid);
+  }
+
   try {
-    const res = await db.insert(cartTable).values({
-      user_id: '',
-      product_id: req.product_id,
-      quantity: 1,
-    });
-    return NextResponse.json(res);
+    const res = await db
+      .insert(cartTable)
+      .values({
+        user_id: cookies().get('user_id')?.value as string,
+        product_id: req.product_id,
+        quantity: 6,
+      })
+      .returning();
+    return NextResponse.json({ res });
   } catch (err) {
     console.log(err);
   }

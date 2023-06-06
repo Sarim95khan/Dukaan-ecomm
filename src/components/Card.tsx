@@ -6,12 +6,13 @@ import Link from 'next/link';
 
 const Card: FC<{ item: any }> = ({ item }) => {
   return (
-    <>
+    <div className="">
       <Link href={`/product/${item._id}`}>
         <img
           src={urlForImage(item.productImage).url()}
           alt="Product Image"
-          className="h-[200px] w-full max-h-[200px] mx-auto object-cover object-center rounded-xl"
+          className="h-[200px] w-full max-h-[200px] mx-auto object-cover object-center rounded-xl shadow-md
+          hover:scale-105"
         />
       </Link>
       <div className="text-left mt-4 px-2">
@@ -20,9 +21,9 @@ const Card: FC<{ item: any }> = ({ item }) => {
         <h3>Category : {item.productCategory.name}</h3>
       </div>
       <div className="text-center">
-        <Cartbutton product_id={item._id} />
+        <Cartbutton item={item._id} />
       </div>
-    </>
+    </div>
   );
 };
 

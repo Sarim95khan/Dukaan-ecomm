@@ -36,11 +36,17 @@ export default async function Home() {
 
   return (
     <main className="">
-      <section id="Products">
-        <div className="my-10 px-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 justify-center gap-10 card  ">
+      <section id="Products" className="max-w-7xl mx-auto">
+        <div
+          className="my-10 px-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 
+        justify-center gap-10 card"
+        >
           {getData.map((item) => {
             return (
-              <div key={item._id}>
+              <div
+                key={item._id}
+                className="shadow-xl p-5 rounded-lg bg-gray-100/40"
+              >
                 <Card item={item} />
               </div>
             );
