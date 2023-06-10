@@ -3,6 +3,7 @@ import React, { FC } from 'react';
 import { urlForImage } from '../../sanity/lib/image';
 import Cartbutton from './Cartbutton';
 import Link from 'next/link';
+import AddtoCart from './AddtoCart';
 
 const Card: FC<{ item: any }> = ({ item }) => {
   return (
@@ -23,6 +24,7 @@ const Card: FC<{ item: any }> = ({ item }) => {
       <div className="text-center">
         <Cartbutton item={item._id} />
       </div>
+      <AddtoCart />
     </div>
   );
 };
