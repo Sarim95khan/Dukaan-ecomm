@@ -1,14 +1,13 @@
 'use client';
 import React from 'react';
 import Link from 'next/link';
-import { useSelector, useDispatch } from 'react-redux';
-import { counterActions } from '@/store/slice/cartSlice';
-import { RootState } from '@/store/store';
+import { useAppSelector } from '@/store/store';
+import { totalProductQtySelector } from '@/store/feature/cartSlice';
+import { ShoppingCartIcon } from '@heroicons/react/24/solid';
 
 const NavBar = () => {
-  const cartValue = useSelector(
-    (state: RootState) => state.counterReducer.totalQuantity
-  );
+  const totalQty = useAppSelector(totalProductQtySelector);
+
   return (
     <div className="sticky top-0 bg-gray-200 flex justify-between items-center max-w-7xl px-10 py-4 shadow-md">
       <Link href="/">
@@ -21,8 +20,7 @@ const NavBar = () => {
         <span>Products</span>
         <span>Category</span>
         <Link href={'/cart'}>
-          <span>Cart</span>
-          {cartValue}
+          <ShoppingCartIcon className="w-10 h-10" />
         </Link>
       </div>
     </div>

@@ -1,11 +1,16 @@
 /* eslint-disable @next/next/no-img-element */
 import React, { FC } from 'react';
 import { urlForImage } from '../../sanity/lib/image';
-import Cartbutton from './Cartbutton';
+import { Product } from '@/interfaces';
+
 import Link from 'next/link';
 import AddtoCart from './AddtoCart';
 
-const Card: FC<{ item: any }> = ({ item }) => {
+interface Props {
+  item: Product;
+}
+
+const Card: FC<Props> = ({ item }) => {
   return (
     <div className="">
       <Link href={`/product/${item._id}`}>
@@ -21,10 +26,7 @@ const Card: FC<{ item: any }> = ({ item }) => {
         <h3>Price : ${item.productPrice}</h3>
         <h3>Category : {item.productCategory.name}</h3>
       </div>
-      <div className="text-center">
-        <Cartbutton item={item._id} />
-      </div>
-      <AddtoCart />
+      <AddtoCart product={item} />
     </div>
   );
 };

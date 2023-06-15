@@ -3,7 +3,7 @@ import React from 'react';
 import { Image as IImage } from 'sanity';
 import { client } from '../../../../sanity/lib/client';
 import { urlForImage } from '../../../../sanity/lib/image';
-import Cartbutton from '@/components/Cartbutton';
+import AddtoCart from '@/components/AddtoCart';
 
 type Props = {
   params: {
@@ -56,7 +56,7 @@ const Product = async ({ params: { id } }: Props) => {
             <div className="mt-4 md:mt-0 w-full col-span-2 md:col-span-1">
               <div className="shadow-xl p-4  ">
                 <p>Price: ${item.productPrice}</p>
-                <Cartbutton item={id} />
+                <AddtoCart product={item} />
               </div>
             </div>
           </div>

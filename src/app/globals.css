@@ -7,4 +7,12 @@
     @apply mt-2 bg-yellow-400 p-2  rounded-lg mx-auto w-full shadow-sm hover:shadow-xl font-bold
     hover:scale-105 transition duration-300;
   }
+  .button-add {
+    @apply mt-2 bg-green-400 px-4 py-2  rounded-lg mx-auto  shadow-sm hover:shadow-xl font-bold
+    hover:scale-105 transition duration-300;
+  }
+  .button-decrease {
+    @apply mt-2 bg-red-400 px-4 py-2  rounded-lg mx-auto shadow-sm hover:shadow-xl font-bold
+    hover:scale-105 transition duration-300;
+  }
 }
