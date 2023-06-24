@@ -9,7 +9,7 @@ interface Props {
 
 const QtyBtn: FC<Props> = ({ qty, onIncrease, onDecrease }) => {
   return (
-    <div className="flex justify-center items-center ">
+    <div className="flex justify-center items-center gap-x-3">
       <button onClick={onIncrease} className="button-add w-12 h-10">
         +
       </button>
