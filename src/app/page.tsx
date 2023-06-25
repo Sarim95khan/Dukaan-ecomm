@@ -2,7 +2,7 @@ import { client } from '../../sanity/lib/client';
 import Card from '@/components/Card';
 import { Image as IImage } from 'sanity';
 
-export const getSanityData = async () => {
+const getSanityData = async () => {
   const res = await client.fetch(`*[_type=='product']{
     productName,
     _id,
