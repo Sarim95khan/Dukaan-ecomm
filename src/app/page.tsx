@@ -1,11 +1,8 @@
-/* eslint-disable @next/next/no-img-element */
-import Image from 'next/image';
 import { client } from '../../sanity/lib/client';
 import Card from '@/components/Card';
 import { Image as IImage } from 'sanity';
-import { urlForImage } from '../../sanity/lib/image';
 
-export const getSanityData = async () => {
+const getSanityData = async () => {
   const res = await client.fetch(`*[_type=='product']{
     productName,
     _id,
