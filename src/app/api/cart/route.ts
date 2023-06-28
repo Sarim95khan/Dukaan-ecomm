@@ -17,7 +17,6 @@ export async function POST(request: NextRequest) {
   const user_id = cookies().get('user_id');
 
   if (!user_id) {
-    // @ts-igonre
     setCookies.set('user_id', uid);
   }
 
